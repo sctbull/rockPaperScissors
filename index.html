@@ -10,14 +10,22 @@
 
 <script>
 
-// create a function called computerPlay that returns either rock, paper, or scissors, randomly.
+// Create a function called computerPlay that returns either rock, paper, or scissors, randomly.
 
 function computerPlay() {
-    let rockPaperScissors = ['rock', 'paper', 'scissors'];
-    let randomAnswer = rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
+    let gameOptions = ['rock', 'paper', 'scissors'];
+    let randomAnswer = gameOptions[Math.floor(Math.random() * gameOptions.length)];
     return randomAnswer;
 }
 console.log(computerPlay());
+
+// Create a function that plays a single round of 'rock, paper, scissors'.
+// The function sould take 2 paramaters - playerSelection, & computerSelection.
+// The function returns a string that delcares the winner of the round.
+
+function rockPaperScissors() {
+
+}
 
 </script>    
 </body>
