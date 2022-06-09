@@ -17,15 +17,32 @@ function computerPlay() {
     let randomAnswer = gameOptions[Math.floor(Math.random() * gameOptions.length)];
     return randomAnswer;
 }
-console.log(computerPlay());
+// console.log(computerPlay());
 
 // Create a function that plays a single round of 'rock, paper, scissors'.
 // The function sould take 2 paramaters - playerSelection, & computerSelection.
 // The function returns a string that delcares the winner of the round.
 
-function rockPaperScissors() {
-
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        return 'You win! Rock beats scissors';
+    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        return 'You lose! Paper beats rock';
+    } else if (playerSelection === 'rock' && computerSelection === 'rock') {
+        return 'It\'s a draw! Both players chose rock.';
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        return 'You win! Paper beats rock';
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        return 'You lose! scissors beats paper';
+    } else if (playerSelection === 'paper' && computerSelection === 'paper') {
+        return 'It\'s a draw! Both players chose paper.';
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        return 'You win! Scissors beat paper';
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        return 'You lose! Rock beats scissors';
+    } else return 'It\'s a draw! Both players chose scissors.';
 }
+console.log(playRound('scissors', computerPlay()));
 
 </script>    
 </body>
