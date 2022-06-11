@@ -10,6 +10,8 @@
 
 <script>
 
+// Variables to store player & computer scores
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -63,6 +65,8 @@ function game() {
         console.log(playRound(playerMessage, computerPlay()));
     }
 }
+
+// Create a function to report final score at end of game and declare if player won, or lost
 
 function scoreKeeper() {
     if (playerScore > computerScore) {
