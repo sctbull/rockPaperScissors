@@ -10,6 +10,9 @@
 
 <script>
 
+let playerScore = 0;
+let computerScore = 0;
+
 // Create a function called computerPlay that returns either rock, paper, or scissors, randomly.
 
 function computerPlay() {
@@ -20,29 +23,47 @@ function computerPlay() {
 // console.log(computerPlay());
 
 // Create a function that plays a single round of 'rock, paper, scissors'.
-// The function sould take 2 paramaters - playerSelection, & computerSelection.
+// The function takes 2 paramaters - playerSelection, & computerSelection.
 // The function returns a string that delcares the winner of the round.
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'scissors') {
-        return 'You win! Rock beats scissors';
+        ++playerScore;
+        return `You win! Rock beats scissors. Player: ${playerScore} Computer: ${computerScore}`;
     } else if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper') {
-        return 'You lose! Paper beats rock';
+        ++computerScore;
+        return `You lose! Paper beats rock. Player: ${playerScore} Computer: ${computerScore}`;
     } else if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'rock') {
-        return 'It\'s a draw! Both players chose rock.';
+        return `It\'s a draw! Both players chose rock. Player: ${playerScore} Computer: ${computerScore}`;
     } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'rock') {
-        return 'You win! Paper beats rock';
+        ++playerScore;
+        return `You win! Paper beats rock Player: ${playerScore} Computer: ${computerScore}`;
     } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissors') {
-        return 'You lose! scissors beats paper';
+        ++computerScore;
+        return `You lose! scissors beats paper Player: ${playerScore} Computer: ${computerScore}`;
     } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'paper') {
-        return 'It\'s a draw! Both players chose paper.';
+        return `It\'s a draw! Both players chose paper. Player: ${playerScore} Computer: ${computerScore}`;
     } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'paper') {
-        return 'You win! Scissors beat paper';
+        ++playerScore;
+        return `You win! Scissors beat paper Player: ${playerScore} Computer: ${computerScore}`;
     } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'rock') {
-        return 'You lose! Rock beats scissors';
-    } else return 'It\'s a draw! Both players chose scissors.';
+        ++computerScore;
+        return `You lose! Rock beats scissors Player: ${playerScore} Computer: ${computerScore}`; 
+    } else return `It\'s a draw! Both players chose scissors. Player: ${playerScore} Computer: ${computerScore}`;
 }
-console.log(playRound('Scissors', computerPlay()));
+// console.log(playRound('Scissors', computerPlay()));
+
+// Write a function called game().
+// Within game(), call playRound() to play a 5 round game of rock, paper, scissors.
+// Keep score & report the winner/loser at the end.
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerMessage = prompt('Rock, paper, or scissors?');
+        console.log(playRound(playerMessage, computerPlay()));
+    }
+}
+console.log(game());
 
 </script>    
 </body>
