@@ -63,7 +63,16 @@ function game() {
         console.log(playRound(playerMessage, computerPlay()));
     }
 }
+
+function scoreKeeper() {
+    if (playerScore > computerScore) {
+        return `You Win! ${playerScore} to ${computerScore}`;
+    } else if (playerScore < computerScore) {
+        return `You Lose! ${playerScore} to ${computerScore}`;
+    } else return `It/'s a Tie ${playerScore} to ${computerScore}`;
+}
 console.log(game());
+console.log(scoreKeeper());
 
 </script>    
 </body>
